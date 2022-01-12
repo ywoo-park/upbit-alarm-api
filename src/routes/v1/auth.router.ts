@@ -5,10 +5,10 @@ const authRouter = express.Router();
 
 authRouter
     .route('/login')
-    .get(login);
+    .post(login);
 
 authRouter
     .route('/register')
-    .get(register)
+    .post(register)
 
 export {authRouter};

@@ -1,4 +1,5 @@
 export const paths = {
     ACCOUNT: '/accounts',
-    MARKET: '/market/all'
+    MARKET: '/market/all',
+    TICKER: '/ticker'
 }

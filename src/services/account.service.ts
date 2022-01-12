@@ -3,8 +3,8 @@ import {JwtService} from "./jwt.service";
 import {paths} from "../config/paths";
 
 export const AccountService = {
-    getAccounts: () => {
-        const token = JwtService.createToken();
+    getAccounts: (req) => {
+        const token = JwtService.getToken(req);
         return call(token, paths.ACCOUNT);
     }
 }

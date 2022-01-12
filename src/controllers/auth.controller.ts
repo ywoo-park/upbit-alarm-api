@@ -1,16 +1,14 @@
-import {JwtService} from "../services/jwt.service";
 import {AuthService} from "../services/auth.service";
+import {catchAsync} from "../utils/catchAsync";
 
-const login = (req: any, res: any) => {
-    const token = JwtService.createToken();
-    AuthService.loginByToken();
-    res.send(token);
-}
+const login = catchAsync(async (req, res) => {
+    const r = await AuthService.login(req.body);
+    res.send(r);
+});
 
-const register = (req: any, res: any) => {
-    const token = JwtService.createToken();
-    AuthService.register();
-    res.send(token);
-}
+const register = catchAsync(async (req, res) => {
+    const r = await AuthService.register(req.body);
+    res.send(r);
+});
 
 export {login, register}

@@ -9,6 +9,7 @@ import {userRouter} from './src/routes/v1/users.route';
 import {accountRouter} from './src/routes/v1/account.route';
 import {marketRouter} from "./src/routes/v1/market.route";
 import {authRouter} from "./src/routes/v1/auth.router";
+import {tickerRouter} from "./src/routes/v1/ticker.route";
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.use('/users', userRouter);
 app.use('/auth', authRouter)
 app.use('/accounts', accountRouter);
 app.use('/market', marketRouter);
+app.use('/ticker', tickerRouter);
 
 // catch 404 and forward to error handler
 // @ts-ignore

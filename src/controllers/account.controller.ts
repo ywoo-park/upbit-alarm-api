@@ -3,7 +3,7 @@ import {catchAsync} from "../utils/catchAsync";
 import {Account} from "../models/account/Account";
 
 const getAccounts = catchAsync(async (req, res) => {
-    const r: Account = await AccountService.getAccounts()
+    const r: Account = await AccountService.getAccounts(req);
     res.send(r);
 });
 
